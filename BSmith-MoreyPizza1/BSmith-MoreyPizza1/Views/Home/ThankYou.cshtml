@@ -1,0 +1,29 @@
+﻿@model BSmith_MoreyPizza1.Models.PizzaChoice
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Thank You</title>
+</head>
+<body>
+    <div class="text-center">
+        <h1>Thank you, @Model.Name!</h1>
+        <div class="lead">
+            @if (Model.Delivery == true)
+            {
+                @:Your @Model.Size pizza will be delivered to your location.
+            }
+            else
+            {
+                @:You have been selected to pick up your @Model.Size pizza.
+            }
+        </div>
+</body>
+</html>

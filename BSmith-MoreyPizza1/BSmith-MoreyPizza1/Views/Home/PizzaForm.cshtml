@@ -1,0 +1,43 @@
+﻿@model BSmith_MoreyPizza1.Models.PizzaChoice
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <title>Pizza Creation</title>
+</head>
+<body>
+    <div class="panel-heading">
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary()
+                <div class="form-group">
+                    <label>Your name:</label>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Your pizza size:</label>
+                    @Html.TextBoxFor(x => x.Size, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Will you attend?</label>
+                    @Html.DropDownListFor(x => x.Delivery, new[] {
+                        new SelectListItem() {Text = "Yes, Deliver to me", Value = bool.TrueString},
+                        new SelectListItem() {Text = "No, I can pick it up", Value = bool.FalseString}
+                    }, "Choose an option", new { @class = "form-control" })
+                </div>
+                <div>
+                    <input type="submit" value="Submit Pizza Order" />
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

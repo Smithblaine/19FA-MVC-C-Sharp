@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <title>Index</title>
+    <style>
+        .btn a {
+            color: white;
+            text-decoration: none
+        }
+
+        body {
+            background-color: #F1F1F1;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-center">
+        <h2>Welcome to Morey's Pizza parlor</h2>
+            <h3>To order a pizza click the green button below!!!</h3>
+            <p>Where all of your pizza dreams can be made and ordered</p>
+            <a href="www.google.com">Visit Us</a>
+            <p>Contact us: 402-616-9635</p>
+            <div class="btn btn-success">
+                @Html.ActionLink("Create your pizza here", "PizzaForm")
+            </div>
+    </div>
+    <div> 
+    </div>
+</body>
+</html>
